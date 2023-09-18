@@ -1,0 +1,188 @@
+<!--
+/*
+ * 版权所有 (C) 2008-12  Bernhard Hobiger
+ *
+ * 本文件是 HoDoKu 的一部分。
+ *
+ * HoDoKu 是自由软件：您可以自由传播和/或修改
+ * 它基于 GNU 通用公共许可证的版本 3 或
+ * （根据您的选择）任何更高版本。
+ *
+ * HoDoKu 是希望它能够有用，
+ * 但没有任何保证；甚至没有任何明示的保证，
+ * 包括对特定目的的适应性和商业性的保证。详细信息请参阅
+ * GNU 通用公共许可证。
+ *
+ * 如果您没有收到 GNU 通用公共许可证的副本，
+ * 请访问 <http://www.gnu.org/licenses/>。
+ */
+
+    Document   : keyboard_default
+    Created on : 13.12.2008, 10:34:00
+    Author     : hobiwan
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <style type="text/css" media="all">
+        <!--
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12pt;
+            line-height: 25pt;
+        }
+
+        h1 {
+            font-size: 14pt;
+            font-weight: bold;
+            /*text-align: center;
+            margin: 0 auto; */
+        }
+
+        dt {
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        dd {
+            margin: 5px;
+            margin-left: 40px;
+            margin-bottom: 10px;
+        }
+        -->
+    </style>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h1>普通操作</h1>
+<dl>
+    <dt>使用鼠标（正常操作）</dt>
+    <dd>单击单元格选择该单元格。按下[ctrl]或[shift]同时点击可选择一组单元格。设置单元格/候选数：
+        <ul>
+            <li>双击候选数将其设置到单元格中</li>
+            <li>如果一个单元格只剩下一个候选数，双击单元格将该候选数设置到单元格中</li>
+            <li>如果应用了过滤器，双击已过滤的单元格将设置过滤的候选数到单元格中，如果是隐藏单一候选数</li>
+            <li>按住[ctrl]键双击候选数可以切换候选数</li>
+        </ul>
+    </dd>
+    <dt>使用鼠标（备选鼠标模式）</dt>
+    <dd>如上所述进行区域选择。设置单元格/候选数：
+        <ul>
+            <li>左键单击候选数将其设置到单元格中</li>
+            <li>如果一个单元格只剩下一个候选数，左键单击单元格的空白处将该候选数设置到单元格中</li>
+            <li>如果应用了过滤器，左键单击已过滤的单元格的空白处将设置过滤的候选数到单元格中，如果是隐藏单一候选数</li>
+            <li>右键单击候选数可以取消该候选数，右键单击单元格的空白处可以启用对应的候选数</li>
+        </ul>
+    </dd>
+    <dt>使用鼠标（着色模式）</dt>
+    <dd>在状态栏或活动单元格视图中单击颜色以激活着色模式。单击单元格/候选数可切换该单元格/候选数的所选颜色。按下[shift]键同时单击将使用另一种颜色。
+        单击背景颜色或按下[esc]键结束着色模式。单击带有“R”的面板结束着色模式并删除所有颜色。</dd>
+    <dt>[左], [上], [右], [下]</dt>
+    <dd>移动光标（高亮显示的单元格）。</dd>
+    <dt>[shift][左], [shift][上], [shift][右], [shift][下]</dt>
+    <dd>扩展所选单元格的范围。</dd>
+    <dt>[shift][ctrl][左], [shift][ctrl][上], [shift][ctrl][右], [shift][ctrl][下]</dt>
+    <dd>如果应用了过滤器，则将光标移动到包含过滤候选数的下一个未解决的单元格。</dd>
+    <dt>[ctrl][左], [ctrl][上], [ctrl][右], [ctrl][下]</dt>
+    <dd>将光标移动到下一个未解决的单元格。</dd>
+    <dt>[home]</dt>
+    <dd>将光标移动到最左侧的列。</dd>
+    <dt>[end]</dt>
+    <dd>将光标移动到最右侧的列。</dd>
+    <dt>[ctrl][home]</dt>
+    <dd>将光标移动到最顶部的行。</dd>
+    <dt>[ctrl][end]</dt>
+    <dd>将光标移动到最底部的行。</dd>
+    <dt>[1] ... [9]</dt>
+    <dd>在高亮显示的单元格中设置值；给定的数独（以黑色显示）无法更改。</dd>
+    <dt>[Ctrl][1] ... [Ctrl][9]</dt>
+    <dd>切换高亮显示的单元格中的候选数。</dd>
+    <dt>[空格]</dt>
+    <dd>如果设置了过滤器（见下文），切换过滤的候选数。</dd>
+    <dt>[del], [backspace], [0]</dt>
+    <dd>删除单元格中的值（给定的数独无法删除）。</dd>
+</dl>
+
+<h1>Filters</h1>
+<p>过滤器有两种类型：显示所有允许放置某个数字的单元格（绿色单元格），或显示禁止放置数字的所有单元格（红色单元格）。</p>
+<dl>
+    <dt>[F1] ... [F9]</dt>
+    <dd>设置/切换过滤的数字。</dd>
+    <dt>[shift][F1] ... [shift][F9]</dt>
+    <dd>设置/切换过滤的数字并切换过滤模式（允许/禁止）。</dd>
+    <dt>[ctrl][F1] ... [ctrl][F9]</dt>
+    <dd>向过滤候选集中添加/删除候选数。如果选择了多个候选数进行过滤，则要么显示包含至少一个过滤候选数的所有单元格（“OR”），要么只显示包含所有过滤候选数的单元格（“AND”）。</dd>
+    <dt>[space]</dt>
+    <dd>如果过滤器激活且当前单元格已过滤，则在单元格中切换过滤候选数。</dd>
+    <dt>[enter]</dt>
+    <dd>如果过滤器激活且当前单元格已过滤，则在单元格中设置过滤候选数。</dd>
+    <dt>[>], [.]</dt>
+    <dd>如果过滤器激活，则设置下一个数字。</dd>
+    <dt>[<], [,]</dt>
+    <dd>如果过滤器激活，则设置上一个数字。</dd>
+</dl>
+
+<h1>Coloring</h1>
+<dl>
+    <dt>[a]/[A], [b]/[B], [c]/[C], [d]/[D], [e]/[E]</dt>
+    <dd>设置/切换所选单元格的背景颜色。</dd>
+    <dt>[r]</dt>
+    <dd>重置所有单元格的背景。</dd>
+</dl>
+
+<h1>Miscellaneous</h1>
+<dl>
+    <dt>[shift][ctrl]</dt>
+    <dd>显示焦点单元格中的所有可能候选数（仅在未设置“选项|显示所有候选数”时）。</dd>
+    <dt>[shift][alt]</dt>
+    <dd>显示所有单元格中的所有可能候选数（仅在未设置“选项|显示所有候选数”时）。</dd>
+</dl>
+
+<h1>Menu and Dialogs</h1>
+<dl>
+    <dt>[ctrl][n]</dt>
+    <dd>创建新的随机数独。</dd>
+    <dt>[ctrl][o]</dt>
+    <dd>打开谜题文件。</dd>
+    <dt>[ctrl][s]</dt>
+    <dd>保存数独。</dd>
+    <dt>[ctrl][p]</dt>
+    <dd>打印数独。</dd>
+    <dt>[alt][x]</dt>
+    <dd>退出程序。</dd>
+    <dt>[ctrl][z]</dt>
+    <dd>撤消。</dd>
+    <dt>[ctrl][y]</dt>
+    <dd>重做。</dd>
+    <dt>[ctrl][c]</dt>
+    <dd>复制候选数到剪贴板。</dd>
+    <dt>[ctrl][g]</dt>
+    <dd>复制已知数字到剪贴板。</dd>
+    <dt>[ctrl][v]</dt>
+    <dd>从剪贴板粘贴数独。</dd>
+    <dt>[ctrl][r]</dt>
+    <dd>重新开始游戏。</dd>
+    <dt>[ctrl][shift][p]</dt>
+    <dd>编辑首选项。</dd>
+    <dt>[ctrl][shift][1] ... [ctrl][shift][5]</dt>
+    <dd>设置新创建数独的难度级别（1 ... 简单到 5 ... 极限）。</dd>
+    <dt>[alt][F12]</dt>
+    <dd>显示模糊提示。</dd>
+    <dt>[ctrl][F12]</dt>
+    <dd>显示具体提示。</dd>
+    <dt>[F12]</dt>
+    <dd>显示下一步。</dd>
+    <dt>[F11]</dt>
+    <dd>设置所有单个数字。</dd>
+    <dt>[ctrl][shift][s]</dt>
+    <dd>仅显示数独。</dd>
+    <dt>[ctrl][shift][u]</dt>
+    <dd>显示解决数独所使用的步骤摘要。</dd>
+    <dt>[ctrl][shift][o]</dt>
+    <dd>显示解决方案。</dd>
+    <dt>[ctrl][shift][a]</dt>
+    <dd>显示当前状态的所有可能步骤。</dd>
+</dl>
+</body>
+</html>
